@@ -4,8 +4,6 @@ public class QuickSort {
 		arr[i] = arr[j];
 		arr[j] = temp;
 	}
-
-
 	
 	public static int partition(int[] arr, int low, int high) {
 		int pivot = arr[high];
