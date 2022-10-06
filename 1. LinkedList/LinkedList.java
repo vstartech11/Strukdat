@@ -3,10 +3,12 @@ public class LinkedList {
     private int length = 0;
 
     public void showAll() {
-        while (first != null) {
-            System.out.print(first.getValue() + " ");
-            first = first.getNext();
+        Node cFirst = first;
+        while (cFirst != null) {
+            System.out.print(cFirst.getValue() + " ");
+            cFirst = cFirst.getNext();
         }
+        System.out.println("\n");
     }
 
     public LinkedList() {
@@ -15,16 +17,16 @@ public class LinkedList {
     }
 
     public void add(int value) {
-
+        Node temp = new Node(value);
         if (this.first == null) {
-            this.first = new Node(value);
+            this.first = temp;
+        } else {
+            temp = first;
+            while (temp.getNext() != null) {
+                temp = temp.getNext();
+            }
+            temp.setNext(new Node(value));
         }
-        first.setNext(new Node(value));
-        // while (first.getNext() != null) {
-        // this.first.getNext();
-        // this.first.setNext(new Node(value));
-
-        // }
         length++;
     }
 

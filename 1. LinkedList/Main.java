@@ -6,10 +6,12 @@ public class Main {
         n.add(4);
         n.add(7);
         n.add(8);
-        n.add(9);
-        // n.insert(a, 1);
-        // n.remove(5);
+        n.add(10);
+        n.insert(4, 1);
+        n.remove(5);
         // n.tukar(0, 1);
+        n.showAll();
+        n.add(11);
         n.showAll();
     }
 }
