@@ -14,14 +14,17 @@ public class LinkedList {
 
     }
 
-    public void add(String value) {
-        Node temp = new Node(value);
+    public void add(int value) {
+
         if (this.first == null) {
-            this.first = temp;
-        } else {
-            temp.setNext(first);
-            first = temp;
+            this.first = new Node(value);
         }
+        first.setNext(new Node(value));
+        // while (first.getNext() != null) {
+        // this.first.getNext();
+        // this.first.setNext(new Node(value));
+
+        // }
         length++;
     }
 
@@ -33,7 +36,7 @@ public class LinkedList {
         return currentNode;
     }
 
-    public void insert(String value, int index) {
+    public void insert(int value, int index) {
         if (index > length || index < 0) {
             throw new IndexOutOfBoundsException();
         }
