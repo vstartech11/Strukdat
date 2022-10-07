@@ -1,10 +1,10 @@
-public class StackAndQueue {
-    private Node first, after;
-    private int length = 0;
+public class Stack {
+    private Node first;
+    private int length;
 
-    public StackAndQueue() {
+    public Stack() {
         this.first = null;
-        this.after = null;
+        this.length = 0;
     }
 
     public Node find(int index) {
@@ -19,7 +19,6 @@ public class StackAndQueue {
         return first != null;
     }
 
-    //Push Stack
     public void pushStack(int value) {
         Node pushNode = new Node(value);
         pushNode.setNext(this.first);
@@ -28,23 +27,6 @@ public class StackAndQueue {
         System.out.println("Data yang di Push: "+pushNode.getValue());
     }
 
-    //Push Queue
-    public void pushQueue(int value) {
-        Node pushNode = new Node(value);
-        if(first == null) {
-            first = pushNode;
-            after = pushNode;
-            length++;
-            System.out.println("Data yang di Push: "+pushNode.getValue());
-        } else {
-            after.setNext(pushNode);
-            after = pushNode;
-            length++;
-            System.out.println("Data yang di Push: "+pushNode.getValue());
-        }
-    }
-
-    //Pop
     public int pop() {
         if (hasPop()) {
             Node temp = this.first;
@@ -58,7 +40,6 @@ public class StackAndQueue {
         return 0;
     }
 
-    //Pop Proses
     public int popSelection(int index) {
         if (index <= this.length && hasPop()) {
             Node popNode;
@@ -81,8 +62,35 @@ public class StackAndQueue {
         System.out.println();
     }
 
-    public void clearData(){
-        this.first = null;
-        length = 0;
+    // public void clearData(){
+    //     this.first = null;
+    //     length = 0;
+    // }
+
+    public static void main(String[] args) {
+        Stack newStack = new Stack();
+        System.out.println("Proses Stack atau Tumpukan");
+        newStack.pushStack(1); //index 4
+        newStack.showData();
+		newStack.pushStack(2); //index 3
+        newStack.showData();
+        newStack.pushStack(3); //index 2
+        newStack.showData();
+        newStack.pushStack(4); //index 1
+        newStack.showData();
+        newStack.pushStack(5); //index 0
+        newStack.showData();
+        System.out.println();
+        newStack.pop();
+        newStack.showData();
+        newStack.pop();
+        newStack.showData();
+        newStack.pop();
+        newStack.showData();
+        newStack.pop();
+        newStack.showData();
+        newStack.pop();
+        newStack.showData();
+        newStack.pop();
     }
 }
