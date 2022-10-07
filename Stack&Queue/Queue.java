@@ -65,7 +65,11 @@ public class Queue {
     public void showData() {
         Node showNode = this.first;
         for (int i = 0; i < length; i++) {
-            System.out.print(+showNode.getValue() + " ");
+            if (i == length - 1) {
+                System.out.print(showNode.getValue()); 
+            }else{
+                System.out.print(showNode.getValue()+" => ");
+            }
             showNode = showNode.getNext();
         }
         System.out.println();
