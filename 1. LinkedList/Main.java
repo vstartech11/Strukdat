@@ -8,8 +8,9 @@ public class Main {
         n.add(8);
         n.add(10);
         n.insert(4, 1);
+        n.showAll();
         n.remove(5);
-        // n.tukar(0, 1);
+        n.tukar(0, 1);
         n.showAll();
         n.add(11);
         n.showAll();
