@@ -4,7 +4,7 @@ public class StackAndQueue {
 
     public StackAndQueue() {
         this.first = null;
-        after = null;
+        this.after = null;
     }
 
     public Node find(int index) {
