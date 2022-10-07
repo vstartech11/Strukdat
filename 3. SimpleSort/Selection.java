@@ -62,7 +62,7 @@ public class Selection{
         return head_ref;
     }
 
-    static void printList( Node head){  
+    public static void printList( Node head){  
     while (head != null)  
     {  
         System.out.print( head.getValue() + " ");  
