@@ -59,7 +59,7 @@ public class Stack {
             if (i == length - 1) {
                 System.out.print(showNode.getValue()); 
             }else{
-                System.out.print(showNode.getValue()+" => ");
+                System.out.print(showNode.getValue()+" - ");
             }
             showNode = showNode.getNext();
         }
