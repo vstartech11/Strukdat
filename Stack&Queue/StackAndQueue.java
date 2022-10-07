@@ -59,7 +59,7 @@ public class StackAndQueue {
     }
 
     //Pop Proses
-    public int pop(int index) {
+    public int popSelection(int index) {
         if (index <= this.length && hasPop()) {
             Node popNode;
             popNode = this.find(index - 1);
