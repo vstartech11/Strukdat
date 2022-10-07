@@ -1,5 +1,6 @@
 public class Queue {
-    private Node first, after;
+    private Node first;
+    private Node after;
     private int length;
 
     public Queue() {
