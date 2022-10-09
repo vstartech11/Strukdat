@@ -74,7 +74,7 @@ public static void main(String args[]){
     oddList.add(9); 
     oddList.add(7);
     //print the original list
-    System.out.println( "Original Linked list:");  
+    System.out.println( "Linked list before sorting:");  
     printList(oddList.head);  
     System.out.print("\n\nsorting");
    
