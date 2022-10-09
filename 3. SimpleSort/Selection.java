@@ -63,8 +63,7 @@ public class Selection{
     }  
 }  
    
-public static void main(String args[]) 
-{  
+public static void main(String args[]){  
     Selection oddList = new Selection();  
    
     // create linked list using addNode method  
