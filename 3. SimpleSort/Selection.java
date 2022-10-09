@@ -66,22 +66,19 @@ public class Selection{
 public static void main(String args[]){  
     Selection oddList = new Selection();  
    
-    // create linked list using addNode method  
     oddList.add(11);  
     oddList.add(1);  
     oddList.add(5);  
     oddList.add(3);  
     oddList.add(9); 
     oddList.add(7);
-    //print the original list
+    
     System.out.println( "Linked list before sorting:");  
     printList(oddList.head);  
-    System.out.print("\n\nsorting");
+    System.out.print("\n\nSorting:");
    
-    // sort the linked list  
     oddList.head = sort(oddList.head);  
    
-    //print the sorted list
     System.out.println( "\nLinked list after sorting:");  
     printList(oddList.head);  
 }  
