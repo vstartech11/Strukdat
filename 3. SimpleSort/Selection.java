@@ -76,7 +76,7 @@ public static void main(String args[]){
     //print the original list
     System.out.println( "Original Linked list:");  
     printList(oddList.head);  
-    System.out.print("\nsorting");
+    System.out.print("\n\nsorting");
    
     // sort the linked list  
     oddList.head = sort(oddList.head);  
