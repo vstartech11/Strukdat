@@ -7,13 +7,6 @@ public class Selection{
     head=newnode;
     }
 
-    public void printLine(Node head){
-        while(head != null){
-            System.out.print(head.getValue()+"");
-            head = head.getNext();
-        }
-    }
-
     public static Node swap(Node head_ref, Node curr_node1, Node curr_node2, Node prev_node){
         head_ref=curr_node2;
         prev_node.setNext(curr_node1);
