@@ -73,7 +73,7 @@ public class Stack {
 
     public static void main(String[] args) {
         Stack newStack = new Stack();
-        System.out.println("Proses Stack atau Tumpukan");
+        System.out.println("Proses Stack atau Tumpukan\n");
         newStack.pushStack(1); //index 4
         newStack.showData();
 		newStack.pushStack(2); //index 3
@@ -82,7 +82,7 @@ public class Stack {
         newStack.showData();
         newStack.pushStack(4); //index 1
         newStack.showData();
-        newStack.pushStack(5); //index 0
+        newStack.pushStack(5); //index 0 (Push terakhir selalu menjadi index 0)
         newStack.showData();
         System.out.println();
         newStack.pop();
