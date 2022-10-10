@@ -7,13 +7,6 @@ public class Selection{
     head=newnode;
     }
 
-    public void printLine(Node head){
-        while(head != null){
-            System.out.print(head.getValue()+"");
-            head = head.getNext();
-        }
-    }
-
     public static Node swap(Node head_ref, Node curr_node1, Node curr_node2, Node prev_node){
         head_ref=curr_node2;
         prev_node.setNext(curr_node1);
@@ -70,26 +63,22 @@ public class Selection{
     }  
 }  
    
-public static void main(String args[]) 
-{  
+public static void main(String args[]){  
     Selection oddList = new Selection();  
    
-    // create linked list using addNode method  
     oddList.add(11);  
     oddList.add(1);  
     oddList.add(5);  
     oddList.add(3);  
     oddList.add(9); 
     oddList.add(7);
-    //print the original list
-    System.out.println( "Original Linked list:");  
+    
+    System.out.println( "Linked list before sorting:");  
     printList(oddList.head);  
-    System.out.print("\nsorting");
+    System.out.print("\n\nSorting:");
    
-    // sort the linked list  
     oddList.head = sort(oddList.head);  
    
-    //print the sorted list
     System.out.println( "\nLinked list after sorting:");  
     printList(oddList.head);  
 }  
