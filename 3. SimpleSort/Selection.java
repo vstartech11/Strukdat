@@ -1,10 +1,17 @@
 public class Selection{
     private Node head;
 
-    public void add(int value){
-    Node newnode = new Node(value);
-    newnode.setNext(head);
-    head=newnode;
+    public void add(int value) {
+        Node temp = new Node(value);
+        if (this.head == null) {
+            this.head = temp;
+        } else {
+            temp = head;
+            while (temp.getNext() != null) {
+                temp = temp.getNext();
+            }
+            temp.setNext(new Node(value));
+        }
     }
 
     public static Node swap(Node head_ref, Node curr_node1, Node curr_node2, Node prev_node){
