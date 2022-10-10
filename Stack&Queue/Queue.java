@@ -76,7 +76,7 @@ public class Queue {
     }
 
     public static void main(String[] args) {
-        System.out.println("Proses Queue atau Antrian");
+        System.out.println("Proses Queue atau Antrian\n");
         Queue newQueue = new Queue();
         newQueue.pushQueue(1); //index 0
         newQueue.showData();
