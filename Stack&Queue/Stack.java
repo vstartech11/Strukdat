@@ -7,6 +7,14 @@ public class Stack {
         this.length = 0;
     }
 
+    public Node find(int index) {
+        Node findNode = this.first;
+        for (int i = 0; i < index; i++) {
+            findNode = findNode.getNext();
+        }
+        return findNode;
+    }
+
     public boolean hasPop() {
         return first != null;
     }
@@ -30,6 +38,19 @@ public class Stack {
             System.out.println("Data sudah kosong tidak bisa di Pop");
         }
         return 0;
+    }
+
+    public int popSelection(int index) {
+        if (index <= this.length && hasPop()) {
+            Node popNode;
+            popNode = this.find(index - 1);
+            int temp = popNode.getNext().getValue();
+            popNode.setNext(popNode.getNext().getNext());
+            length--;
+            return temp;
+        } else {
+            return 0;
+        }
     }
 
     public void showData() {
