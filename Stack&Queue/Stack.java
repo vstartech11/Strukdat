@@ -96,5 +96,6 @@ public class Stack {
         newStack.pop();
         newStack.showData();
         newStack.pop();
+        newStack.showData();
     }
 }
