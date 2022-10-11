@@ -14,15 +14,15 @@ public class Selection{
         }
     }
 
-    public static Node swap(Node head_ref, Node curr_node1, Node curr_node2, Node prev_node){
-        head_ref=curr_node2;
+    public static Node swap(Node head, Node curr_node1, Node curr_node2, Node prev_node){
+        head=curr_node2;
         prev_node.setNext(curr_node1);
 
         Node temp = curr_node2.getNext();
         curr_node2.setNext(curr_node1.getNext());
         curr_node1.setNext(temp);
 
-        return head_ref;
+        return head;
     }
 
     public static Node Selection_Sort(Node head){
@@ -53,13 +53,13 @@ public class Selection{
         return head;
     }
 
-    public static Node sort(Node head_ref){
-        if(head_ref==null){
+    public static Node sort(Node head){
+        if(head==null){
             return null;
         }
 
-        head_ref = Selection_Sort(head_ref);
-        return head_ref;
+        head = Selection_Sort(head);
+        return head;
     }
 
     public static void printList( Node head){  
@@ -73,12 +73,12 @@ public class Selection{
 public static void main(String args[]){  
     Selection oddList = new Selection();  
    
-    oddList.add(11);  
-    oddList.add(1);  
-    oddList.add(5);  
-    oddList.add(3);  
-    oddList.add(9); 
-    oddList.add(7);
+    oddList.add(13);  
+    oddList.add(4);  
+    oddList.add(2);  
+    oddList.add(7);  
+    oddList.add(3); 
+    oddList.add(9);
     
     System.out.println( "Linked list before sorting:");  
     printList(oddList.head);  
