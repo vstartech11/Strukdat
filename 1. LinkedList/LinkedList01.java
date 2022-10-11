@@ -1,4 +1,4 @@
-public class LinkedList {
+public class LinkedList01 {
     private Node first;
     private int length = 0;
 
@@ -11,7 +11,7 @@ public class LinkedList {
         System.out.println("\n");
     }
 
-    public LinkedList() {
+    public LinkedList01() {
         this.first = null;
 
     }
