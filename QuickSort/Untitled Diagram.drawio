@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2022-10-11T12:43:26.125Z" agent="5.0 (Macintosh; Intel Mac OS X 10_15_0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/105.0.0.0 Safari/537.36" etag="bqFAnnzHpzeQ-saP0f23" version="20.4.0" type="github">
+<mxfile host="app.diagrams.net" modified="2022-10-11T12:59:40.648Z" agent="5.0 (Macintosh; Intel Mac OS X 10_15_0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/105.0.0.0 Safari/537.36" etag="mbPRI1mbDtlDGHGj7wnZ" version="20.4.0" type="github">
   <diagram id="C5RBs43oDa-KdzZeNtuy" name="Page-1">
     <mxGraphModel dx="786" dy="546" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
@@ -14,6 +14,12 @@
         </mxCell>
         <mxCell id="llUpB8g6KJN3qQGRMO3K-2" value="input numArray[]&lt;br&gt;int n = 7" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
           <mxGeometry x="320" y="120" width="126" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="llUpB8g6KJN3qQGRMO3K-6" value="numArray &lt;br&gt;&amp;lt;= pivot" style="rhombus;whiteSpace=wrap;html=1;shadow=0;fontFamily=Helvetica;fontSize=12;align=center;strokeWidth=1;spacing=6;spacingTop=-4;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="326" y="370" width="100" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="llUpB8g6KJN3qQGRMO3K-12" value="numArray &lt;br&gt;&amp;lt;= pivot" style="rhombus;whiteSpace=wrap;html=1;shadow=0;fontFamily=Helvetica;fontSize=12;align=center;strokeWidth=1;spacing=6;spacingTop=-4;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="480" y="370" width="100" height="80" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
