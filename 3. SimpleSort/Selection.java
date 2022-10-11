@@ -71,22 +71,22 @@ public class Selection{
 }  
    
 public static void main(String args[]){  
-    Selection oddList = new Selection();  
+    Selection List = new Selection();  
    
-    oddList.add(13);  
-    oddList.add(4);  
-    oddList.add(2);  
-    oddList.add(7);  
-    oddList.add(3); 
-    oddList.add(9);
+    List.add(13);  
+    List.add(4);  
+    List.add(2);  
+    List.add(7);  
+    List.add(3); 
+    List.add(9);
     
     System.out.println( "Linked list before sorting:");  
-    printList(oddList.head);  
+    printList(List.head);  
     System.out.print("\n\nSorting:");
    
-    oddList.head = sort(oddList.head);  
+    List.head = sort(List.head);  
    
     System.out.println( "\nLinked list after sorting:");  
-    printList(oddList.head);  
+    printList(List.head);  
 }  
 }
