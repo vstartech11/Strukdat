@@ -1,4 +1,4 @@
-public class LinkedList01 {
+public class LinkedList {
     private Node first;
     private int length = 0;
 
@@ -11,7 +11,7 @@ public class LinkedList01 {
         System.out.println("\n");
     }
 
-    public LinkedList01() {
+    public LinkedList() {
         this.first = null;
 
     }
@@ -74,11 +74,9 @@ public class LinkedList01 {
         if (length > index1 && length > index2 && index1 >= 0 && index2 >= 0) {
             Node temp1 = searchNode(index1 + 1), temp2 = searchNode(index2 + 1);
             insert(temp2.getValue(), index1);
-            remove
-    (index1 + 1);
+            remove(index1 + 1);
             insert(temp1.getValue(), index2);
-            remove
-    (index2 + 1);
+            remove(index2 + 1);
         } else {
             throw new IndexOutOfBoundsException();
         }

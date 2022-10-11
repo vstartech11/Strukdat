@@ -1,12 +1,12 @@
 import java.util.*;
 
 public class Main {
-    static int partition(int numArray[], int low, int high) {
+    public static int partition(int numArray[], int low, int high) {
         int pivot = numArray[high];
         int i = (low - 1);
         System.out.println(Arrays.toString(numArray) + "-> Pivot = " + pivot);
-        for (int j = low; j <= high - 1; j++) { //pivot > array?
-            if (numArray[j] <= pivot) { //kondisi perbandingan untuk ditukar posisi
+        for (int j = low; j <= high - 1; j++) { // pivot > array?
+            if (numArray[j] <= pivot) { // kondisi perbandingan untuk ditukar posisi
                 i++;
                 int temp = numArray[i];
                 numArray[i] = numArray[j];
@@ -16,12 +16,12 @@ public class Main {
         }
         System.out.println(Arrays.toString(numArray));
         int temp = numArray[i + 1];
-        numArray[i + 1] = numArray[high]; //9 bkn pivot krn sudah terurut. shg pivot = 2 sbg pembanding
+        numArray[i + 1] = numArray[high]; // 9 bkn pivot krn sudah terurut. shg pivot = 2 sbg pembanding
         numArray[high] = temp;
         return i + 1;
     }
 
-    static void quickSort(int numArray[], int low, int high) {
+    public static void quickSort(int numArray[], int low, int high) {
         int[] intStack = new int[high - low + 1];
         int top = -1;
         intStack[++top] = low;
