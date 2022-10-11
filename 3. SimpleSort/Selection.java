@@ -25,7 +25,7 @@ public class Selection{
         return head;
     }
 
-    public static Node selection(Node head){
+    public static Node Selection_Sort(Node head){
         if(head.getNext()==null){
             return head;
         }
@@ -48,7 +48,7 @@ public class Selection{
         System.out.println("");
         printList(head);
         System.out.println("");
-        head.setNext(selection(head.getNext()));
+        head.setNext(Selection_Sort(head.getNext()));
         
         return head;
     }
@@ -58,7 +58,7 @@ public class Selection{
             return null;
         }
 
-        head = selection(head);
+        head = Selection_Sort(head);
         return head;
     }
 
