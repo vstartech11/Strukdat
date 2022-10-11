@@ -1,5 +1,5 @@
-public class LinkedList {
-    private Node first;
+public class LinkedList02 {
+    private Node first, last;
     private int length = 0;
 
     public void showAll() {
@@ -11,9 +11,9 @@ public class LinkedList {
         System.out.println("\n");
     }
 
-    public LinkedList() {
+    public LinkedList02() {
         this.first = null;
-
+        this.last = null;
     }
 
     public void add(int value) {
@@ -27,7 +27,6 @@ public class LinkedList {
             }
             temp.setNext(new Node(value));
         }
-        length++;
     }
 
     public Node searchNode(int index) {
@@ -72,14 +71,48 @@ public class LinkedList {
 
     public void tukar(int index1, int index2) {
         if (length > index1 && length > index2 && index1 >= 0 && index2 >= 0) {
-            Node temp1 = searchNode(index1 + 1), temp2 = searchNode(index2 + 1);
-            insert(temp2.getValue(), index1);
-            remove(index1 + 1);
-            insert(temp1.getValue(), index2);
-            remove(index2 + 1);
+            Node temp1, temp2;
+            if (index1 < index2) {
+                temp1 = searchNode(index1);
+                temp2 = searchNode(index2 + 1);
+            } else {
+                temp2 = searchNode(index1 + 1);
+                temp1 = searchNode(index2);
+            }
+            if (temp1 == this.first) {
+                this.first = temp2;
+            } else if (temp2 == this.first) {
+                this.first = temp2;
+            }
+
+            if (temp1 == this.last) {
+                this.last = temp2;
+            } else if (temp2 == this.last) {
+                this.last = temp2;
+            }
+            Node tempNode = temp1.getNext();
+            temp1.setNext(temp2.getNext());
+            temp2.setNext(tempNode);
+
+            if (temp1.getNext() != null) {
+                temp1.getNext().setPrev(temp1);
+            }
+            if (temp2.getNext() != null) {
+                temp2.getNext().setPrev(temp2);
+            }
+
+            tempNode = temp1.getPrev();
+            temp1.setPrev(temp2.getPrev());
+            temp2.setPrev(tempNode);
+
+            if (temp1.getPrev() != null) {
+                temp1.getPrev().setNext(temp1);
+            }
+            if (temp2.getPrev() != null) {
+                temp2.getPrev().setNext(temp2);
+            }
         } else {
             throw new IndexOutOfBoundsException();
         }
-
     }
 }

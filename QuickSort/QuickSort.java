@@ -1,8 +1,12 @@
-import java.util.*;
+public class QuickSort {
+	public static void swap(int[] arr, int i, int j) {
+		int temp = arr[i];
+		arr[i] = arr[j];
+		arr[j] = temp;
+	}
 
-class Main {
-	static int partition(int numArray[], int low, int high) {
-		int pivot = numArray[high];
+	public static int partition(int[] arr, int low, int high) {
+		int pivot = arr[high];
 		int i = (low - 1);
 		System.out.println(Arrays.toString(numArray) + "Pivot = " + pivot);
 		for (int j = low; j <= high - 1; j++) {
