@@ -3,10 +3,12 @@ public class LinkedList02 {
     private int length = 0;
 
     public void showAll() {
-        while (first != null) {
-            System.out.print(first.getValue() + " ");
-            first = first.getNext();
+        Node cFirst = first;
+        while (cFirst != null) {
+            System.out.print(cFirst.getValue() + " ");
+            cFirst = cFirst.getNext();
         }
+        System.out.println("\n");
     }
 
     public LinkedList02() {
@@ -19,13 +21,15 @@ public class LinkedList02 {
         if (this.first == null) {
             this.first = temp;
         } else {
-            temp.setNext(first);
-            first = temp;
+            temp = first;
+            while (temp.getNext() != null) {
+                temp = temp.getNext();
+            }
+            temp.setNext(new Node(value));
         }
-        length++;
     }
 
-    public Node searchNode02(int index) {
+    public Node searchNode(int index) {
         Node currentNode = this.first;
         for (int i = 0; i < index - 1; i++) {
             currentNode = currentNode.getNext();
@@ -42,37 +46,38 @@ public class LinkedList02 {
             temp.setNext(first);
             first = temp;
         } else {
-            Node SNode = searchNode02(index);
+            Node SNode = searchNode(index);
             temp.setNext(SNode.getNext());
             SNode.setNext(temp);
         }
         length++;
     }
 
-    public void remove02(int index) {
+    public void remove(int index) {
         if (index > length || index < 0) {
-            throw new IndexOutOfBoundsException();
-        }
-        Node temp;
-        if (index == 0) {
-            temp = this.first.getNext();
-            first = temp;
+            // showAll();
+            System.out.println("Data yang dihapus tidak ada");
         } else {
-            temp = searchNode02(index);
-            temp.setNext(temp.getNext().getNext());
+            Node temp;
+            if (index == 0) {
+                temp = this.first.getNext();
+                first = temp;
+            } else {
+                temp = searchNode(index);
+                temp.setNext(temp.getNext().getNext());
+            }
         }
-        length--;
     }
 
     public void tukar(int index1, int index2) {
         if (length > index1 && length > index2 && index1 >= 0 && index2 >= 0) {
             Node temp1, temp2;
             if (index1 < index2) {
-                temp1 = searchNode02(index1);
-                temp2 = searchNode02(index2 + 1);
+                temp1 = searchNode(index1);
+                temp2 = searchNode(index2 + 1);
             } else {
-                temp2 = searchNode02(index1 + 1);
-                temp1 = searchNode02(index2);
+                temp2 = searchNode(index1 + 1);
+                temp1 = searchNode(index2);
             }
             if (temp1 == this.first) {
                 this.first = temp2;

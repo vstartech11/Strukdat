@@ -30,7 +30,7 @@ public class LinkedList01 {
         length++;
     }
 
-    public Node searchNode01(int index) {
+    public Node searchNode(int index) {
         Node currentNode = this.first;
         for (int i = 0; i < index - 1; i++) {
             currentNode = currentNode.getNext();
@@ -47,14 +47,14 @@ public class LinkedList01 {
             temp.setNext(first);
             first = temp;
         } else {
-            Node SNode = searchNode01(index);
+            Node SNode = searchNode(index);
             temp.setNext(SNode.getNext());
             SNode.setNext(temp);
         }
         length++;
     }
 
-    public void remove01(int index) {
+    public void remove(int index) {
         if (index > length || index < 0) {
             // showAll();
             System.out.println("Data yang dihapus tidak ada");
@@ -64,7 +64,7 @@ public class LinkedList01 {
                 temp = this.first.getNext();
                 first = temp;
             } else {
-                temp = searchNode01(index);
+                temp = searchNode(index);
                 temp.setNext(temp.getNext().getNext());
             }
         }
@@ -72,12 +72,12 @@ public class LinkedList01 {
 
     public void tukar(int index1, int index2) {
         if (length > index1 && length > index2 && index1 >= 0 && index2 >= 0) {
-            Node temp1 = searchNode01(index1 + 1), temp2 = searchNode01(index2 + 1);
+            Node temp1 = searchNode(index1 + 1), temp2 = searchNode(index2 + 1);
             insert(temp2.getValue(), index1);
-            remove01
+            remove
     (index1 + 1);
             insert(temp1.getValue(), index2);
-            remove01
+            remove
     (index2 + 1);
         } else {
             throw new IndexOutOfBoundsException();
