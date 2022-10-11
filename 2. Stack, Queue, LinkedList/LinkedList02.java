@@ -12,7 +12,6 @@ public class LinkedList02 {
     public LinkedList02() {
         this.first = null;
         this.last = null;
-
     }
 
     public void add(int value) {
@@ -26,7 +25,7 @@ public class LinkedList02 {
         length++;
     }
 
-    public Node searchNode(int index) {
+    public Node searchNode02(int index) {
         Node currentNode = this.first;
         for (int i = 0; i < index - 1; i++) {
             currentNode = currentNode.getNext();
@@ -43,14 +42,14 @@ public class LinkedList02 {
             temp.setNext(first);
             first = temp;
         } else {
-            Node SNode = searchNode(index);
+            Node SNode = searchNode02(index);
             temp.setNext(SNode.getNext());
             SNode.setNext(temp);
         }
         length++;
     }
 
-    public void remove(int index) {
+    public void remove02(int index) {
         if (index > length || index < 0) {
             throw new IndexOutOfBoundsException();
         }
@@ -59,7 +58,7 @@ public class LinkedList02 {
             temp = this.first.getNext();
             first = temp;
         } else {
-            temp = searchNode(index);
+            temp = searchNode02(index);
             temp.setNext(temp.getNext().getNext());
         }
         length--;
@@ -69,11 +68,11 @@ public class LinkedList02 {
         if (length > index1 && length > index2 && index1 >= 0 && index2 >= 0) {
             Node temp1, temp2;
             if (index1 < index2) {
-                temp1 = searchNode(index1);
-                temp2 = searchNode(index2 + 1);
+                temp1 = searchNode02(index1);
+                temp2 = searchNode02(index2 + 1);
             } else {
-                temp2 = searchNode(index1 + 1);
-                temp1 = searchNode(index2);
+                temp2 = searchNode02(index1 + 1);
+                temp1 = searchNode02(index2);
             }
             if (temp1 == this.first) {
                 this.first = temp2;
