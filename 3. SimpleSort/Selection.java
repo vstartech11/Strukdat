@@ -80,7 +80,7 @@ public static void main(String args[]){
     List.add(3); 
     List.add(9);
     
-    System.out.println( "Linked list before sorting:");  
+    System.out.println("\nLinked list before sorting:");  
     printList(List.head);  
     System.out.print("\n\nSorting:");
    
