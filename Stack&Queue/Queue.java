@@ -1,11 +1,11 @@
 public class Queue {
     private Node first;
-    private Node after;
+    private Node last;
     private int length;
 
     public Queue() {
         this.first = null;
-        this.after = null;
+        this.last = null;
         this.length = 0;
     }
 
@@ -17,12 +17,12 @@ public class Queue {
         Node pushNode = new Node(value);
         if(first == null) {
             first = pushNode;
-            after = pushNode;
+            last = pushNode;
             length++;
             System.out.println("Data yang di Push: "+pushNode.getValue());
         } else {
-            after.setNext(pushNode);
-            after = pushNode;
+            last.setNext(pushNode);
+            last = pushNode;
             length++;
             System.out.println("Data yang di Push: "+pushNode.getValue());
         }
