@@ -1,0 +1,44 @@
+import java.util.Arrays;
+
+public class QuickSort {
+
+// Memisah array
+public static int partisi(int[] array, int start, int end) {
+    int pivot = array[end]; //pivot berada di end
+    int i = (start - 1); // 
+    System.out.println(Arrays.toString(array) +"-> pivot = " + pivot);
+    for (int j = start; j < end; j++) {
+        if (array[j] <= pivot) { //mengecek array [j] <= pivot
+            i++;
+            int swap = array[i]; //
+            array[i] = array[j];
+            array[j] = swap;
+        }      
+    }
+    System.out.println(Arrays.toString(array));
+    int swap = array[i + 1];
+    array[i + 1] = array[end];
+    array[end] = swap;
+    return i + 1;
+}
+
+public static void quicksort(int[] array, int start, int end) {
+    if (start < end) { //jika start < end, maka
+        int pivot = partisi(array, start, end); // mencari pivot di partisi start hingga end
+        quicksort(array, start, pivot - 1); // mensorting partisi start dengan pivot - 1
+        quicksort(array, pivot + 1, end);   // mensorting partisi end dengan pivot + 1
+    }
+}
+
+public static void main(String[] args) {
+    int[] array = {3, 2, 6, -1, 9, -6, 1};
+    System.out.println("Array sebelum sorting: ");
+    System.out.println(Arrays.toString(array));
+
+    System.out.println("\nProses sorting");
+    quicksort(array, 0, array.length - 1);
+
+    System.out.println("\nArray setelah sorting: ");
+    System.out.println(Arrays.toString(array));
+    }
+}
