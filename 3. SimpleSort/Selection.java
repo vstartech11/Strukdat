@@ -1,21 +1,28 @@
 public class Selection{
     private Node head;
 
-    public void add(int value){
-    Node newnode = new Node(value);
-    newnode.setNext(head);
-    head=newnode;
+    public void add(int value) {
+        Node temp = new Node(value);
+        if (this.head == null) {
+            this.head = temp;
+        } else {
+            temp = head;
+            while (temp.getNext() != null) {
+                temp = temp.getNext();
+            }
+            temp.setNext(new Node(value));
+        }
     }
 
-    public static Node swap(Node head_ref, Node curr_node1, Node curr_node2, Node prev_node){
-        head_ref=curr_node2;
+    public static Node swap(Node head, Node curr_node1, Node curr_node2, Node prev_node){
+        head=curr_node2;
         prev_node.setNext(curr_node1);
 
         Node temp = curr_node2.getNext();
         curr_node2.setNext(curr_node1.getNext());
         curr_node1.setNext(temp);
 
-        return head_ref;
+        return head;
     }
 
     public static Node Selection_Sort(Node head){
@@ -46,13 +53,13 @@ public class Selection{
         return head;
     }
 
-    public static Node sort(Node head_ref){
-        if(head_ref==null){
+    public static Node sort(Node head){
+        if(head==null){
             return null;
         }
 
-        head_ref = Selection_Sort(head_ref);
-        return head_ref;
+        head = Selection_Sort(head);
+        return head;
     }
 
     public static void printList( Node head){  
@@ -64,22 +71,22 @@ public class Selection{
 }  
    
 public static void main(String args[]){  
-    Selection oddList = new Selection();  
+    Selection List = new Selection();  
    
-    oddList.add(11);  
-    oddList.add(1);  
-    oddList.add(5);  
-    oddList.add(3);  
-    oddList.add(9); 
-    oddList.add(7);
+    List.add(13);  
+    List.add(4);  
+    List.add(2);  
+    List.add(7);  
+    List.add(3); 
+    List.add(9);
     
-    System.out.println( "Linked list before sorting:");  
-    printList(oddList.head);  
+    System.out.println("\nLinked list before sorting:");  
+    printList(List.head);  
     System.out.print("\n\nSorting:");
    
-    oddList.head = sort(oddList.head);  
+    List.head = sort(List.head);  
    
     System.out.println( "\nLinked list after sorting:");  
-    printList(oddList.head);  
+    printList(List.head);  
 }  
 }
