@@ -10,7 +10,7 @@ public class Main {
         n.insert(4, 1);
         n.showAll();
         n.remove(5);
-        n.tukar(0, 1);
+        n.swap(0, 1);
         n.showAll();
         n.add(11);
         n.showAll();

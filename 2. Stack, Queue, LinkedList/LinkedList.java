@@ -69,7 +69,7 @@ public class LinkedList{
         }
     }
 
-    public void tukar(int index1, int index2) {
+    public void swap(int index1, int index2) {
         if (length > index1 && length > index2 && index1 >= 0 && index2 >= 0) {
             Node temp1, temp2;
             if (index1 < index2) {
